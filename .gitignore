@@ -12,6 +12,7 @@ out/
 dist/
 build/
 coverage/
+*.tsbuildinfo
 
 # Logs
 *.log
@@ -19,3 +20,4 @@ coverage/
 # System files
 .DS_Store
 Thumbs.db
+.codex-screenshots/
