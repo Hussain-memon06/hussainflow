@@ -21,3 +21,6 @@ coverage/
 .DS_Store
 Thumbs.db
 .codex-screenshots/
+
+# Local/private project instructions
+AGENTS.md
