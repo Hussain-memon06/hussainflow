@@ -20,12 +20,8 @@ coverage/
 # System files
 .DS_Store
 Thumbs.db
-.codex-screenshots/
 
-# Local/private project instructions
+# Local/private files
+.codex-screenshots/
+.local-docs/
 AGENTS.md
-# Local/private project docs
-CODEX_PROMPT_TEMPLATES.md
-HUSSAINFLOW_BRAND_SYSTEM.md
-PROJECT_WORKFLOW.md
-ROADMAP.md
