@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "HussainFlow | AI Workflow Systems",
+  title: "HussainFlow | Outbound Workflow Systems",
   description:
-    "HussainFlow builds practical AI workflow systems for outbound and lead generation agencies, covering prospect research, ICP fit, CRM updates, campaign handoffs, and client reporting.",
+    "HussainFlow builds practical AI workflow systems for lead generation and outbound agencies, covering prospect research, lead list cleanup, ICP fit, CRM updates, campaign handoffs, and client reporting.",
   icons: {
     icon: "/icon.svg",
     shortcut: "/icon.svg",

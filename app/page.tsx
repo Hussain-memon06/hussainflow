@@ -1,32 +1,53 @@
 import { ScrollEffects } from "./ScrollEffects";
 import styles from "./page.module.css";
 
-const heroTags = ["Prospect research", "Lead lists", "ICP fit", "Campaign handoffs", "Client reporting"];
+const heroBreakpoints = [
+  {
+    area: "Lead lists",
+    pain: "Duplicates, missing context, and uneven fit signals.",
+  },
+  {
+    area: "ICP review",
+    pain: "The team is not always aligned on who is worth outreach.",
+  },
+  {
+    area: "Personalization prep",
+    pain: "Research exists, but the outreach angle still needs review.",
+  },
+  {
+    area: "CRM updates",
+    pain: "Notes get added late, inconsistently, or without the decision trail.",
+  },
+  {
+    area: "Campaign handoffs",
+    pain: "Approval and context get lost between research, CRM, and launch.",
+  },
+];
 
 const painPoints = [
   {
     icon: "🔍",
-    title: "Prospect context gets scattered",
-    copy: "Prospect research lives across tabs, sheets, CRM notes, and enrichment tools before anyone can use it.",
+    title: "Research gets scattered",
+    copy: "Prospect notes, source links, CRM context, and fit signals sit across too many tabs before the team can act.",
   },
   {
     icon: "📊",
-    title: "ICP fit gets inconsistent",
-    copy: "Lead lists move forward with different fit checks, different notes, and unclear approval standards.",
+    title: "Lead lists need review",
+    copy: "A list can look complete while fit, source gaps, duplicates, and missing context still need a human check.",
   },
   {
     icon: "🤝",
-    title: "Campaign handoffs lose context",
-    copy: "Personalization angles, source gaps, and next actions get passed around without a clean review trail.",
+    title: "Handoffs lose outreach context",
+    copy: "Personalization angles, approvals, and next actions get passed into campaigns without a clean review trail.",
   },
 ];
 
-const inputChecks = ["Lead list imported", "ICP notes attached", "CRM context pulled"];
+const inputChecks = ["Lead list imported", "ICP criteria attached", "CRM history pulled"];
 
 const reviewChecks = [
   {
     status: "done",
-    label: "ICP fit checked",
+    label: "ICP fit reviewed",
   },
   {
     status: "warn",
@@ -38,101 +59,101 @@ const reviewChecks = [
   },
 ];
 
-const outputTags = ["Account brief", "Personalization angle", "CRM update"];
+const outputTags = ["Account brief", "Personalization prep", "CRM update"];
 
 const beforeAfter = [
   {
-    before: "Unverified lead lists",
-    after: "ICP-fit checked lists",
+    before: "Unreviewed lead lists",
+    after: "ICP-fit prospect lists",
   },
   {
-    before: "Scattered prospect research",
-    after: "Structured account briefs",
+    before: "Scattered prospect notes",
+    after: "Source-backed account briefs",
   },
   {
     before: "Manual personalization prep",
     after: "Reviewable outreach context",
   },
   {
-    before: "CRM updates after the fact",
-    after: "CRM-ready handoffs",
+    before: "Late CRM updates",
+    after: "CRM-ready campaign handoffs",
   },
 ];
 
 const systemCards = [
   {
     title: "Prospect Research Systems",
-    copy: "Turn lead lists into account briefs with source notes, ICP fit, gaps, and recommended next actions.",
-    tags: ["Sources", "ICP fit", "Gaps"],
-    flow: ["Lead list", "ICP check", "Account brief"],
+    copy: "Turn raw lead lists and research notes into account briefs with sources, fit signals, gaps, and next actions.",
+    tags: ["Sources", "Fit signals", "Gaps"],
+    flow: ["Lead list", "Research check", "Account brief"],
   },
   {
-    title: "Client Reporting Systems",
-    copy: "Turn campaign activity, lead list progress, and reply context into concise client-ready updates.",
-    tags: ["Pipeline", "Replies", "Next steps"],
-    flow: ["Campaign data", "Summary rules", "Client update"],
+    title: "Lead List Review Systems",
+    copy: "Make ICP fit, duplicates, missing context, and approval status visible before outreach starts.",
+    tags: ["ICP fit", "Duplicates", "Approval"],
+    flow: ["Raw list", "Review rules", "Approved list"],
   },
   {
     title: "Campaign Handoff Systems",
-    copy: "Move approved prospects from research into outreach, CRM, or client review with the context still attached.",
-    tags: ["Approval", "Owner", "Next action"],
-    flow: ["Approved brief", "Decision trail", "Campaign handoff"],
+    copy: "Move approved accounts into outreach with personalization notes, owner, status, and CRM context attached.",
+    tags: ["Personalization", "Owner", "Status"],
+    flow: ["Approved account", "Handoff note", "Campaign-ready"],
   },
   {
-    title: "CRM Update Systems",
-    copy: "Keep prospect records, follow-ups, and campaign notes clean without making the team do duplicate admin.",
-    tags: ["CRM", "Fields", "Follow-up"],
-    flow: ["Research output", "Field mapping", "CRM update"],
+    title: "Client Reporting Systems",
+    copy: "Convert campaign activity, replies, list progress, and risks into client-ready updates your team can repeat.",
+    tags: ["Progress", "Replies", "Risks"],
+    flow: ["Campaign data", "Summary logic", "Client update"],
   },
 ];
 
 const methodSteps = [
   {
-    title: "Map the manual workflow",
-    copy: "Start with how leads, research, personalization prep, approvals, and CRM updates actually move today.",
+    title: "Map the outbound workflow",
+    copy: "Start with how lead lists, prospect research, personalization prep, approvals, and CRM updates move today.",
   },
   {
     title: "Design the review layer",
-    copy: "Define ICP checks, source gaps, personalization inputs, and where approval happens before outreach.",
+    copy: "Define ICP checks, source gaps, personalization inputs, CRM fields, and where approval happens before outreach.",
   },
   {
     title: "Build the first system",
-    copy: "Create a focused workflow around one repeated outbound process and test it with real prospects.",
+    copy: "Build around one repeated outbound process first, then test it with real lead lists and campaign work.",
   },
   {
     title: "Document and improve",
-    copy: "Turn what works into a repeatable operating pattern for campaigns, CRM updates, and reporting.",
+    copy: "Turn what works into a repeatable operating rhythm for campaigns, CRM updates, and client reporting.",
   },
 ];
 
 const examples = [
   {
-    name: "Outbound prospect research",
-    problem: "Lead lists arrive without enough context to judge fit or personalize well.",
-    system: "Source summary, ICP fit check, research gaps, and recommended next action.",
+    name: "Lead list cleanup",
+    problem: "Lead lists arrive with duplicates, missing context, and uneven fit signals.",
+    system: "Source check, ICP fit, missing fields, duplicate review, and next action.",
     review: "Approval required before outreach.",
   },
   {
-    name: "Campaign performance reporting",
-    problem: "Client updates are rebuilt from campaign notes, replies, and spreadsheets.",
-    system: "Pipeline movement, reply context, risks, wins, and follow-ups in one flow.",
-    review: "Operator approves the client-ready summary.",
+    name: "Personalization prep",
+    problem: "Research exists, but the outreach angle is not ready for review.",
+    system: "Account brief, source notes, relevance angle, gaps, and approval state.",
+    review: "Operator approves the outreach context before launch.",
   },
   {
-    name: "Campaign handoff",
-    problem: "Approved prospects do not move cleanly from research into outreach and CRM.",
-    system: "Personalization angle, approval status, CRM fields, owner, and next move.",
-    review: "Human approval before CRM update or campaign launch.",
+    name: "Client reporting handoff",
+    problem: "Campaign progress, reply context, and risks get rebuilt manually for clients.",
+    system: "Lead list progress, replies, blockers, wins, risks, and next steps in one update.",
+    review: "Human review before the client-ready report goes out.",
   },
 ];
 
 const principles = [
   "Approval before outreach",
   "Source gaps stay visible",
-  "ICP fit is explicit",
-  "Personalization context is reviewable",
+  "ICP fit is reviewable",
+  "Personalization prep has context",
   "CRM updates are clean",
-  "Built for repeat campaigns",
+  "Reporting follows one rhythm",
 ];
 
 export default function Home() {
@@ -161,14 +182,13 @@ export default function Home() {
 
       <section className={styles.hero} id="top" aria-labelledby="hero-title">
         <div className={styles.heroCopy}>
-          <p className={`${styles.kicker} reveal`}>Founder-led AI workflow systems</p>
+          <p className={`${styles.kicker} reveal`}>Founder-led Agentic workflow systems</p>
           <h1 className="reveal delay-1" id="hero-title">
             <span className={styles.heroHeadlineLine}>Turn manual agency work</span>
             <span className={styles.heroHeadlineOutcome}>into <em>clean, repeatable systems.</em></span>
           </h1>
           <p className={`${styles.heroText} reveal delay-2`}>
-            Built for outbound operators working through lead lists, CRM updates, campaign handoffs,
-            and client reporting. HussainFlow turns that manual work into reviewable systems with clear logic and approval before outreach.
+            Built for <strong>outbound operators</strong> managing lead lists, prospect research, CRM updates, campaign handoffs, and client reporting. HussainFlow turns that work into <strong>reviewable systems</strong> with visible logic and <strong>approval before outreach</strong>.
           </p>
           <div className={`${styles.heroActions} reveal delay-3`}>
             <a className={styles.primaryAction} href="#contact">
@@ -178,13 +198,16 @@ export default function Home() {
               See example systems
             </a>
           </div>
-          <div className={`${styles.heroTagGroup} reveal delay-4`}>
-            <p className={styles.heroTagLabel}>Common outbound workflows</p>
-            <ul className={`${styles.heroTags} reveal-stagger`} aria-label="Common outbound workflows">
-              {heroTags.map((tag) => (
-                <li key={tag}>{tag}</li>
+          <div className={`${styles.heroBreakpoints} reveal delay-4`}>
+            <p className={styles.heroBreakpointsLabel}>Where outbound work usually breaks</p>
+            <ol className={`${styles.heroBreakpointsList} reveal-stagger`} aria-label="Where outbound work usually breaks">
+              {heroBreakpoints.map((item) => (
+                <li key={item.area}>
+                  <span className={styles.breakpointArea}>{item.area}</span>
+                  <span className={styles.breakpointPain}>{item.pain}</span>
+                </li>
               ))}
-            </ul>
+            </ol>
           </div>
         </div>
 
@@ -194,18 +217,18 @@ export default function Home() {
               <span className={styles.consoleDot} aria-hidden="true" />
               <span className={styles.consoleTitle}>Workflow Review Console</span>
             </div>
-            <span className={styles.consoleStatusPill}>Live</span>
+            <span className={styles.consoleStatusPill}>Review ready</span>
           </div>
 
           <div className={styles.consoleWorkflowInfo}>
-            <h4 className={styles.consoleWorkflowName}>Outbound Lead Research Workflow</h4>
-            <span className={styles.consoleWorkflowStatus}>Ready for outreach review</span>
+            <h4 className={styles.consoleWorkflowName}>Lead List Review Workflow</h4>
+            <span className={styles.consoleWorkflowStatus}>Ready for outreach approval</span>
           </div>
 
           <div className={styles.consoleDivider} />
 
           <div className={`${styles.consoleSection} ${styles.consoleSectionInput}`}>
-            <span className={styles.consoleSectionLabel}>Input gathered</span>
+            <span className={styles.consoleSectionLabel}>Inputs gathered</span>
             <ul className={styles.consoleChecklist}>
               {inputChecks.map((item) => (
                 <li className={styles.checkDone} key={item}>
@@ -236,7 +259,7 @@ export default function Home() {
           </div>
 
           <div className={`${styles.consoleSection} ${styles.consoleSectionOutput}`}>
-            <span className={styles.consoleSectionLabel}>Output ready</span>
+            <span className={styles.consoleSectionLabel}>Outputs ready</span>
             <div className={styles.consoleOutputItems}>
               {outputTags.map((tag) => (
                 <span className={styles.outputTag} key={tag}>
@@ -264,8 +287,7 @@ export default function Home() {
             The real drag is between the tools.
           </h2>
           <p className="reveal delay-2">
-            Outbound teams do not usually need another enrichment tool. They need the work between lead lists, research, ICP decisions, reporting, and
-            campaign handoffs to become clearer.
+            Outbound and lead generation teams rarely need another enrichment tool. They need the work between <strong>prospect research</strong>, <strong>lead list cleanup</strong>, <strong>ICP review</strong>, <strong>CRM updates</strong>, and <strong>campaign handoffs</strong> to become clearer.
           </p>
         </div>
         <div className={`${styles.painGrid} reveal-stagger`}>
@@ -314,10 +336,10 @@ export default function Home() {
         <div className={styles.sectionHeading}>
           <p className={`${styles.kicker} reveal`}>Workflow systems</p>
           <h2 className="reveal delay-1" id="systems-title">
-            Practical systems for repeated outbound work.
+            Practical systems for repeated outbound delivery.
           </h2>
           <p className="reveal delay-2">
-            Each system starts with one repeated outbound workflow, then turns the reviewable parts into visible logic.
+            Each system starts with one repeated outbound workflow, then turns the review points into visible logic.
           </p>
         </div>
         <div className={`${styles.systemGrid} reveal-stagger`}>
@@ -367,7 +389,7 @@ export default function Home() {
         <div className={styles.sectionHeading}>
           <p className={`${styles.kicker} reveal`}>Example systems</p>
           <h2 className="reveal delay-1" id="examples-title">
-            What a system can look like once it leaves the messy stage.
+            What a reviewable outbound system can look like.
           </h2>
         </div>
         <div className={`${styles.exampleGrid} reveal-stagger`}>
@@ -397,7 +419,7 @@ export default function Home() {
         <div className={styles.principlesCopy}>
           <p className={`${styles.kicker} reveal`}>Trust layer</p>
           <h2 className="reveal delay-1" id="principles-title">
-            Built for work people can inspect.
+            Built for outbound work people can inspect.
           </h2>
         </div>
         <ul className={`${styles.principlesList} reveal-stagger`}>
@@ -412,8 +434,8 @@ export default function Home() {
         <div className={`${styles.aboutLayout} reveal delay-1`}>
           <h2 id="about-title">Built by Hussain, close to the operating work.</h2>
           <p>
-            HussainFlow works close to the operating layer inside outbound and lead generation agencies: prospect research, personalization prep, CRM updates, campaign handoffs, and client reporting. The goal is
-            simple: make the repeated work easier to trust, approve, and improve.
+            HussainFlow works close to the operating layer inside outbound and lead generation agencies: prospect research, lead list review, personalization prep, CRM updates, campaign handoffs, and client reporting. The goal is
+            simple: make repeated outbound work easier to trust, approve, and improve.
           </p>
         </div>
       </section>
@@ -421,8 +443,8 @@ export default function Home() {
       <section className={`${styles.finalCta} reveal-scale`} id="contact" aria-labelledby="contact-title">
         <div>
           <p className={styles.kicker}>Next step</p>
-          <h2 id="contact-title">Have an outbound workflow your team keeps repeating?</h2>
-          <p>Send the manual version: the lead list, research notes, CRM update, or reporting handoff. I will help identify what can become a clear, reviewable system.</p>
+          <h2 id="contact-title">Have a lead generation workflow your team keeps repeating?</h2>
+          <p className={styles.finalCtaText}>Send the <strong>messy version</strong>: the lead list, research notes, personalization prep, CRM update, or client report. I will help turn the repeated parts into a <strong>clear, reviewable workflow</strong> your team can trust before outreach.</p>
         </div>
         <div className={styles.ctaActions}>
           <a className={styles.primaryAction} href="mailto:hello@hussainflow.com">
