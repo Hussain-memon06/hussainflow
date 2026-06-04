@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ScrollEffects } from "./ScrollEffects";
 import styles from "./page.module.css";
 
@@ -174,6 +175,7 @@ export default function Home() {
           <a href="#systems">Systems</a>
           <a href="#method">Method</a>
           <a href="#examples">Examples</a>
+          <a href="#about">About</a>
           <a className={styles.navCta} href="#contact">
             Book audit
           </a>
@@ -429,17 +431,25 @@ export default function Home() {
         </ul>
       </section>
 
-      <section className={styles.aboutSection} aria-labelledby="about-title">
+      <section className={styles.aboutSection} id="about" aria-labelledby="about-title">
         <p className={`${styles.kicker} reveal`}>Founder-led</p>
         <div className={`${styles.aboutLayout} reveal delay-1`}>
-          <h2 id="about-title">Built by Hussain, close to the operating work.</h2>
-          <p>
-            HussainFlow works close to the operating layer inside outbound and lead generation agencies: prospect research, lead list review, personalization prep, CRM updates, campaign handoffs, and client reporting. The goal is
-            simple: make repeated outbound work easier to trust, approve, and improve.
-          </p>
+          <div className={styles.aboutCopy}>
+            <h2 id="about-title">Built from the work before the system.</h2>
+            <div className={styles.aboutText}>
+              <p>
+                Hussain came into AI from a <strong>business background</strong>, not a traditional CS path. Before building workflow systems, he worked close to practical marketing and outbound execution: sales emails, ad copy, HubSpot campaigns, and agency support.
+              </p>
+              <p>
+                He later built deeper technical foundations through CS50x and Stanford machine learning coursework, then moved into applied AI systems for lead research, qualification, CRM updates, and approval before outreach. That shows up in systems like the <strong>Outbound Lead Agent</strong> and <strong>Outbound Lead Qualifier</strong>: source checks, visible logic, and human review before anything reaches a prospect.
+              </p>
+            </div>
+          </div>
+          <figure className={styles.aboutPortrait}>
+            <Image className={styles.aboutPortraitImage} src="/founder.jpeg" alt="Hussain, founder of HussainFlow" width={896} height={1194} sizes="(max-width: 768px) 320px, 340px" />
+          </figure>
         </div>
       </section>
-
       <section className={`${styles.finalCta} reveal-scale`} id="contact" aria-labelledby="contact-title">
         <div>
           <p className={styles.kicker}>Next step</p>
