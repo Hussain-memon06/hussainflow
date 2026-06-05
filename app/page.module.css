@@ -332,10 +332,17 @@
 }
 
 .heroBreakpoints {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(255, 247, 240, 0.28)) padding-box,
+    linear-gradient(145deg, rgba(194, 112, 62, 0.16), rgba(229, 226, 222, 0.62) 54%, rgba(194, 112, 62, 0.08)) border-box;
+  border: 1px solid transparent;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 16px 44px rgba(15, 23, 42, 0.035), inset 0 1px 0 rgba(255, 255, 255, 0.72);
   display: grid;
   gap: 12px;
   margin-top: 24px;
-  max-width: 620px;
+  max-width: 700px;
+  padding: 14px;
   width: 100%;
 }
 
@@ -343,11 +350,12 @@
   align-items: center;
   color: var(--text-secondary);
   display: inline-flex;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 14.5px;
+  font-weight: 600;
   gap: 8px;
   line-height: var(--leading-normal);
   max-width: none;
+  padding: 0 4px;
 }
 
 .heroBreakpointsLabel::before {
@@ -363,23 +371,25 @@
 .heroBreakpointsList {
   counter-reset: breakpoint;
   display: grid;
-  gap: 9px;
+  gap: 7px;
   list-style: none;
   margin-top: 0;
-  max-width: 590px;
+  max-width: none;
+  width: 100%;
 }
 
 .heroBreakpointsList li {
-  align-items: start;
-  background: rgba(255, 255, 255, 0.74);
-  border: 1px solid rgba(194, 112, 62, 0.12);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-xs);
+  align-items: center;
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(226, 232, 240, 0.72);
+  border-radius: 13px;
+  box-shadow: none;
   color: var(--text-secondary);
   display: grid;
-  gap: 4px 12px;
-  grid-template-columns: 34px minmax(0, 1fr);
-  padding: 13px 16px;
+  gap: 10px;
+  grid-template-columns: 34px minmax(128px, 0.34fr) minmax(0, 1fr);
+  max-width: 100%;
+  padding: 10px 12px;
   position: relative;
   transition:
     background-color var(--transition-base),
@@ -391,27 +401,26 @@
 
 .heroBreakpointsList li::before {
   align-items: center;
-  background: var(--accent-primary-light);
+  background: rgba(253, 232, 216, 0.82);
   border-radius: var(--radius-full);
   color: var(--accent-primary-hover);
   content: counter(breakpoint, decimal-leading-zero);
   counter-increment: breakpoint;
   display: inline-flex;
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 700;
-  grid-row: 1 / span 2;
-  height: 24px;
+  grid-row: 1;
+  height: 26px;
   justify-content: center;
   line-height: 1;
-  margin-top: 1px;
-  width: 30px;
+  width: 32px;
 }
 
 .heroBreakpointsList li:hover {
-  background: var(--accent-primary-subtle);
-  border-color: var(--border-accent);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  background: rgba(255, 247, 240, 0.52);
+  border-color: rgba(194, 112, 62, 0.14);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.035);
+  transform: translateY(-1px);
 }
 
 .breakpointArea {
@@ -422,10 +431,13 @@
 }
 
 .breakpointPain {
-  color: var(--text-tertiary);
-  font-size: 13.5px;
+  color: var(--text-secondary);
+  display: block;
+  font-size: 15px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 1.42;
+  max-width: 100%;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.74);
 }
 .workflowConsole {
   background: var(--bg-card);
@@ -1316,6 +1328,45 @@
   font-weight: 700;
 }
 
+.aboutLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.aboutLinks a {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  display: inline-flex;
+  height: 36px;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    color var(--transition-base),
+    transform var(--transition-base);
+  width: 36px;
+}
+
+.aboutLinks a:hover {
+  background: var(--accent-primary-subtle);
+  border-color: var(--border-accent);
+  color: var(--accent-primary-hover);
+  transform: translateY(-1px);
+}
+
+.aboutLinks img {
+  display: block;
+  height: 18px;
+  object-fit: contain;
+  width: 18px;
+}
+
 .aboutPortrait {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 250, 246, 0.72)) padding-box,
@@ -1463,6 +1514,10 @@
 
   .heroBreakpointsList li:nth-child(4) {
     animation-delay: 6.6s;
+  }
+
+  .heroBreakpointsList li:nth-child(5) {
+    animation-delay: 8.8s;
   }
 
   .heroBreakpointsList li:hover {
@@ -1625,17 +1680,17 @@
   0%,
   18%,
   100% {
-    background: rgba(255, 255, 255, 0.74);
-    border-color: rgba(194, 112, 62, 0.12);
-    box-shadow: var(--shadow-xs);
+    background: rgba(255, 255, 255, 0.42);
+    border-color: rgba(226, 232, 240, 0.72);
+    box-shadow: none;
     transform: translateY(0);
   }
 
   6%,
   12% {
-    background: rgba(255, 247, 240, 0.9);
-    border-color: rgba(194, 112, 62, 0.22);
-    box-shadow: 0 8px 22px rgba(194, 112, 62, 0.075);
+    background: rgba(255, 247, 240, 0.54);
+    border-color: rgba(194, 112, 62, 0.14);
+    box-shadow: 0 7px 16px rgba(194, 112, 62, 0.035);
     transform: translateY(-1px);
   }
 }
@@ -1995,8 +2050,13 @@
   }
 
   .heroBreakpointsList li {
+    align-items: start;
     grid-template-columns: 32px minmax(0, 1fr);
-    padding: 12px 14px;
+    padding: 11px 12px;
+  }
+
+  .heroBreakpointsList li::before {
+    grid-row: 1 / span 2;
   }
 
   .breakpointArea {
@@ -2004,7 +2064,7 @@
   }
 
   .breakpointPain {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 /* Premium card edge refinement */

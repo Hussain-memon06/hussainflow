@@ -444,6 +444,17 @@ export default function Home() {
                 He later built deeper technical foundations through CS50x and Stanford machine learning coursework, then moved into applied AI systems for lead research, qualification, CRM updates, and approval before outreach. That shows up in systems like the <strong>Outbound Lead Agent</strong> and <strong>Outbound Lead Qualifier</strong>: source checks, visible logic, and human review before anything reaches a prospect.
               </p>
             </div>
+            <div className={styles.aboutLinks} aria-label="Public profile links">
+              <a href="https://github.com/Hussain-memon06" target="_blank" rel="noreferrer" aria-label="GitHub profile">
+                <Image src="/logos/github.png" alt="" width={18} height={18} aria-hidden="true" />
+              </a>
+              <a href="https://www.upwork.com/freelancers/~010d4014910b3f3c85" target="_blank" rel="noreferrer" aria-label="Upwork profile">
+                <Image src="/logos/upwork.png" alt="" width={18} height={18} aria-hidden="true" />
+              </a>
+              <a href="https://www.linkedin.com/in/muhammad-hussain16/" target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
+                <Image src="/logos/linkedin.png" alt="" width={18} height={18} aria-hidden="true" />
+              </a>
+            </div>
           </div>
           <figure className={styles.aboutPortrait}>
             <Image className={styles.aboutPortraitImage} src="/founder.jpeg" alt="Hussain, founder of HussainFlow" width={896} height={1194} sizes="(max-width: 768px) 320px, 340px" />
