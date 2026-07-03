@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { HeroWorkflow } from "./HeroWorkflow";
 import { ScrollEffects } from "./ScrollEffects";
+import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 import styles from "./page.module.css";
 
@@ -319,7 +320,7 @@ export default function Home() {
           <p className={styles.finalCtaText}>Send the <strong>messy version</strong>: the lead list, research notes, personalization prep, CRM update, or client report. I will help turn the repeated parts into a <strong>clear, reviewable workflow</strong> your team can trust before outreach.</p>
         </div>
         <div className={styles.ctaActions}>
-          <a className={styles.primaryAction} href="mailto:hello@hussainflow.com">
+          <a className={styles.primaryAction} href="mailto:hussain@hussainflow.com">
             Book a workflow audit
           </a>
           <Link className={styles.secondaryAction} data-scroll-target="examples" href="/">
@@ -327,6 +328,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
+      <SiteFooter />
     </main>
   );
 }

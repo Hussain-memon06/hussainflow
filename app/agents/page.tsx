@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ScrollEffects } from "../ScrollEffects";
+import { SiteFooter } from "../SiteFooter";
 import { SiteHeader } from "../SiteHeader";
 import styles from "./agents.module.css";
 
@@ -50,6 +51,7 @@ export default function AgentsPage() {
           ))}
         </div>
       </section>
+      <SiteFooter />
     </main>
   );
 }

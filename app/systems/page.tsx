@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ScrollEffects } from "../ScrollEffects";
+import { SiteFooter } from "../SiteFooter";
 import { SiteHeader } from "../SiteHeader";
 import styles from "./systems.module.css";
 
@@ -103,6 +104,7 @@ export default function SystemsPage() {
           Predictable work is automated. Exceptions and external actions wait for human approval.
         </p>
       </section>
+      <SiteFooter />
     </main>
   );
 }
