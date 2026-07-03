@@ -1,29 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
+import { HeroWorkflow } from "./HeroWorkflow";
 import { ScrollEffects } from "./ScrollEffects";
+import { SiteHeader } from "./SiteHeader";
 import styles from "./page.module.css";
-
-const heroBreakpoints = [
-  {
-    area: "Lead lists",
-    pain: "Duplicates, missing context, and uneven fit signals.",
-  },
-  {
-    area: "ICP review",
-    pain: "The team is not always aligned on who is worth outreach.",
-  },
-  {
-    area: "Personalization prep",
-    pain: "Research exists, but the outreach angle still needs review.",
-  },
-  {
-    area: "CRM updates",
-    pain: "Notes get added late, inconsistently, or without the decision trail.",
-  },
-  {
-    area: "Campaign handoffs",
-    pain: "Approval and context get lost between research, CRM, and launch.",
-  },
-];
 
 const painPoints = [
   {
@@ -42,25 +22,6 @@ const painPoints = [
     copy: "Personalization angles, approvals, and next actions get passed into campaigns without a clean review trail.",
   },
 ];
-
-const inputChecks = ["Lead list imported", "ICP criteria attached", "CRM history pulled"];
-
-const reviewChecks = [
-  {
-    status: "done",
-    label: "ICP fit reviewed",
-  },
-  {
-    status: "warn",
-    label: "Personalization gaps flagged",
-  },
-  {
-    status: "done",
-    label: "Duplicate account checked",
-  },
-];
-
-const outputTags = ["Account brief", "Personalization prep", "CRM update"];
 
 const beforeAfter = [
   {
@@ -161,125 +122,15 @@ export default function Home() {
   return (
     <main className={styles.page}>
       <ScrollEffects />
-      <header className={styles.header}>
-        <a className={styles.brand} href="#top" aria-label="HussainFlow home">
-          <span className={styles.brandMark} aria-hidden="true">
-            <span />
-            <span />
-            <span />
-          </span>
-          <span>HussainFlow</span>
+      <SiteHeader variant="home" />
+
+      <HeroWorkflow />
+
+      <section className={styles.workflowBridge} aria-label="Workflow overview">
+        <p className="reveal">From raw lead lists to approved campaign handoffs.</p>
+        <a className="reveal delay-1" href="/systems">
+          See how the workflow works <span aria-hidden="true">→</span>
         </a>
-        <nav className={styles.nav} aria-label="Primary navigation">
-          <a href="#problem">Problem</a>
-          <a href="#systems">Systems</a>
-          <a href="#method">Method</a>
-          <a href="#examples">Examples</a>
-          <a href="#about">About</a>
-          <a className={styles.navCta} href="#contact">
-            Book audit
-          </a>
-        </nav>
-      </header>
-
-      <section className={styles.hero} id="top" aria-labelledby="hero-title">
-        <div className={styles.heroCopy}>
-          <p className={`${styles.kicker} reveal`}>Founder-led Agentic workflow systems</p>
-          <h1 className="reveal delay-1" id="hero-title">
-            <span className={styles.heroHeadlineLine}>Turn manual agency work</span>
-            <span className={styles.heroHeadlineOutcome}>into <em>clean, repeatable systems.</em></span>
-          </h1>
-          <p className={`${styles.heroText} reveal delay-2`}>
-            Built for <strong>outbound operators</strong> managing lead lists, prospect research, CRM updates, campaign handoffs, and client reporting. HussainFlow turns that work into <strong>reviewable systems</strong> with visible logic and <strong>approval before outreach</strong>.
-          </p>
-          <div className={`${styles.heroActions} reveal delay-3`}>
-            <a className={styles.primaryAction} href="#contact">
-              Book a workflow audit
-            </a>
-            <a className={styles.secondaryAction} href="#examples">
-              See example systems
-            </a>
-          </div>
-          <div className={`${styles.heroBreakpoints} reveal delay-4`}>
-            <p className={styles.heroBreakpointsLabel}>Where outbound work usually breaks</p>
-            <ol className={`${styles.heroBreakpointsList} reveal-stagger`} aria-label="Where outbound work usually breaks">
-              {heroBreakpoints.map((item) => (
-                <li key={item.area}>
-                  <span className={styles.breakpointArea}>{item.area}</span>
-                  <span className={styles.breakpointPain}>{item.pain}</span>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-
-        <aside className={`${styles.workflowConsole} reveal-right delay-3`} aria-label="Workflow review console">
-          <div className={styles.consoleHeader}>
-            <div className={styles.consoleHeaderLeft}>
-              <span className={styles.consoleDot} aria-hidden="true" />
-              <span className={styles.consoleTitle}>Workflow Review Console</span>
-            </div>
-            <span className={styles.consoleStatusPill}>Review ready</span>
-          </div>
-
-          <div className={styles.consoleWorkflowInfo}>
-            <h4 className={styles.consoleWorkflowName}>Lead List Review Workflow</h4>
-            <span className={styles.consoleWorkflowStatus}>Ready for outreach approval</span>
-          </div>
-
-          <div className={styles.consoleDivider} />
-
-          <div className={`${styles.consoleSection} ${styles.consoleSectionInput}`}>
-            <span className={styles.consoleSectionLabel}>Inputs gathered</span>
-            <ul className={styles.consoleChecklist}>
-              {inputChecks.map((item) => (
-                <li className={styles.checkDone} key={item}>
-                  <span className={`${styles.checkIcon} ${styles.done}`} aria-hidden="true">
-                    ✓
-                  </span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className={`${styles.consoleSection} ${styles.consoleSectionReview}`}>
-            <span className={styles.consoleSectionLabel}>Review checks</span>
-            <ul className={styles.consoleChecklist}>
-              {reviewChecks.map((item) => (
-                <li className={item.status === "warn" ? styles.checkWarn : styles.checkDone} key={item.label}>
-                  <span
-                    className={`${styles.checkIcon} ${item.status === "warn" ? styles.warn : styles.done}`}
-                    aria-hidden="true"
-                  >
-                    {item.status === "warn" ? "!" : "✓"}
-                  </span>
-                  <span>{item.label}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className={`${styles.consoleSection} ${styles.consoleSectionOutput}`}>
-            <span className={styles.consoleSectionLabel}>Outputs ready</span>
-            <div className={styles.consoleOutputItems}>
-              {outputTags.map((tag) => (
-                <span className={styles.outputTag} key={tag}>
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className={styles.consoleDivider} />
-
-          <div className={styles.consoleFooter}>
-            <span className={styles.consoleFooterIcon} aria-hidden="true">
-              🔒
-            </span>
-            <span className={styles.consoleFooterText}>Approval required before outreach</span>
-          </div>
-        </aside>
       </section>
 
       <section className={styles.problemSection} id="problem" aria-labelledby="problem-title">
@@ -471,9 +322,9 @@ export default function Home() {
           <a className={styles.primaryAction} href="mailto:hello@hussainflow.com">
             Book a workflow audit
           </a>
-          <a className={styles.secondaryAction} href="#examples">
+          <Link className={styles.secondaryAction} data-scroll-target="examples" href="/">
             See example systems
-          </a>
+          </Link>
         </div>
       </section>
     </main>
